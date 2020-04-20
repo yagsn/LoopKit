@@ -511,8 +511,8 @@ extension GlucoseStore {
         - completion: A closure called once the calculation has completed. The closure takes two arguments:
         - effects: The calculated effect values, or an empty array if the glucose data isn't suitable for momentum calculation.
      */
-    public func getRecentMomentumEffect(_ completion: @escaping (_ effects: [GlucoseEffect]) -> Void) {
-        getCachedGlucoseSamples(start: Date(timeIntervalSinceNow: -momentumDataInterval)) { (samples) in
+    public func getRecentMomentumEffect(for date: Date = Date(), _ completion: @escaping (_ effects: [GlucoseEffect]) -> Void) {
+        getCachedGlucoseSamples(start: date.addingTimeInterval(-momentumDataInterval)) { (samples) in
             let effects = samples.linearMomentumEffect(
                 duration: self.momentumDataInterval,
                 delta: TimeInterval(minutes: 5)

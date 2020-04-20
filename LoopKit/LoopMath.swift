@@ -11,7 +11,7 @@ import HealthKit
 
 
 public enum LoopMath {
-    static func simulationDateRangeForSamples<T: Collection>(
+    public static func simulationDateRangeForSamples<T: Collection>(
         _ samples: T,
         from start: Date? = nil,
         to end: Date? = nil,

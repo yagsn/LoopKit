@@ -88,9 +88,9 @@ extension BidirectionalCollection where Element: GlucoseSampleValue, Index == In
     ///   - duration: The duration of the effects
     ///   - delta: The time differential for the returned values
     /// - Returns: An array of glucose effects
-    func linearMomentumEffect(
-        duration: TimeInterval = TimeInterval(minutes: 30),
-        delta: TimeInterval = TimeInterval(minutes: 5)
+    public func linearMomentumEffect(
+        duration: TimeInterval = TimeInterval(30 * 60),
+        delta: TimeInterval = TimeInterval(5 * 60)
     ) -> [GlucoseEffect] {
         guard
             self.count > 2,  // Linear regression isn't much use without 3 or more entries.
@@ -148,7 +148,7 @@ extension Collection where Element: GlucoseSampleValue, Index == Int {
     ///
     /// - Parameter effects: Glucose effects to be countered, in chronological order
     /// - Returns: An array of velocities describing the change in glucose samples compared to the specified effects
-    func counteractionEffects(to effects: [GlucoseEffect]) -> [GlucoseEffectVelocity] {
+    public func counteractionEffects(to effects: [GlucoseEffect]) -> [GlucoseEffectVelocity] {
         let mgdL = HKUnit.milligramsPerDeciliter
         let velocityUnit = GlucoseEffectVelocity.perSecondUnit
         var velocities = [GlucoseEffectVelocity]()

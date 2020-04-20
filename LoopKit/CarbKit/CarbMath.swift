@@ -10,13 +10,13 @@ import Foundation
 import HealthKit
 
 
-struct CarbModelSettings {
-    var absorptionModel: CarbAbsorptionComputable
-    var initialAbsorptionTimeOverrun: Double
-    var adaptiveAbsorptionRateEnabled: Bool
-    var adaptiveRateStandbyIntervalFraction: Double
+public struct CarbModelSettings {
+    public var absorptionModel: CarbAbsorptionComputable
+    public var initialAbsorptionTimeOverrun: Double
+    public var adaptiveAbsorptionRateEnabled: Bool
+    public var adaptiveRateStandbyIntervalFraction: Double
     
-    init(absorptionModel: CarbAbsorptionComputable, initialAbsorptionTimeOverrun: Double, adaptiveAbsorptionRateEnabled: Bool, adaptiveRateStandbyIntervalFraction: Double = 0.2) {
+    public init(absorptionModel: CarbAbsorptionComputable, initialAbsorptionTimeOverrun: Double, adaptiveAbsorptionRateEnabled: Bool, adaptiveRateStandbyIntervalFraction: Double = 0.2) {
         self.absorptionModel = absorptionModel
         self.initialAbsorptionTimeOverrun = initialAbsorptionTimeOverrun
         self.adaptiveAbsorptionRateEnabled = adaptiveAbsorptionRateEnabled
@@ -24,7 +24,7 @@ struct CarbModelSettings {
     }
 }
 
-protocol CarbAbsorptionComputable {
+public protocol CarbAbsorptionComputable {
     /// Returns the percentage of total carbohydrates absorbed as blood glucose at a specified interval after eating.
     ///
     /// - Parameters:
@@ -469,15 +469,15 @@ extension Collection {
         return values
     }
 
-    func dynamicGlucoseEffects<T>(
+    public func dynamicGlucoseEffects<T>(
         from start: Date? = nil,
         to end: Date? = nil,
         carbRatios: CarbRatioSchedule,
         insulinSensitivities: InsulinSensitivitySchedule,
         defaultAbsorptionTime: TimeInterval,
         absorptionModel: CarbAbsorptionComputable,
-        delay: TimeInterval = TimeInterval(minutes: 10),
-        delta: TimeInterval = TimeInterval(minutes: 5)
+        delay: TimeInterval = TimeInterval(600),
+        delta: TimeInterval = TimeInterval(300)
     ) -> [GlucoseEffect] where Element == CarbStatus<T> {
         guard let (startDate, endDate) = simulationDateRange(from: start, to: end, defaultAbsorptionTime: defaultAbsorptionTime, delay: delay, delta: delta) else {
             return []
@@ -799,7 +799,7 @@ extension Collection where Element: CarbEntry {
     ///   - defaultAbsorptionTime: The absorption time to use for unspecified carb entries
     ///   - delay: The time to delay the dose effect
     /// - Returns: A new array of `CarbStatus` values describing the absorbed carb quantities
-    func map(
+    public func map(
         to effectVelocities: [GlucoseEffectVelocity],
         carbRatio: CarbRatioSchedule?,
         insulinSensitivity: InsulinSensitivitySchedule?,

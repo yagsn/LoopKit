@@ -17,10 +17,21 @@ public enum CarbStoreResult<T> {
     case failure(CarbStore.CarbStoreError)
 }
 
-public enum CarbAbsorptionModel {
+public enum CarbAbsorptionModel: String {
     case linear
     case nonlinear
     case adaptiveRateNonlinear
+    
+    public func settings(with absorptionTimeOverrun: Double) -> CarbModelSettings {
+        switch self {
+        case .linear:
+            return CarbModelSettings(absorptionModel: LinearAbsorption(), initialAbsorptionTimeOverrun: absorptionTimeOverrun, adaptiveAbsorptionRateEnabled: false)
+        case .nonlinear:
+            return CarbModelSettings(absorptionModel: PiecewiseLinearAbsorption(), initialAbsorptionTimeOverrun: absorptionTimeOverrun, adaptiveAbsorptionRateEnabled: false)
+        case .adaptiveRateNonlinear:
+            return CarbModelSettings(absorptionModel: PiecewiseLinearAbsorption(), initialAbsorptionTimeOverrun: 1.0, adaptiveAbsorptionRateEnabled: true, adaptiveRateStandbyIntervalFraction: 0.2)
+        }
+    }
 }
 
 public protocol CarbStoreSyncDelegate: class {
@@ -242,14 +253,7 @@ public final class CarbStore: HealthKitSampleStore {
                     UserDefaults.standard.purgeLegacyCarbEntryKeys()
             
                     // Carb model settings based on the selected absorption model
-                    switch self.carbAbsorptionModel {
-                    case .linear:
-                        self.settings = CarbModelSettings(absorptionModel: LinearAbsorption(), initialAbsorptionTimeOverrun: absorptionTimeOverrun, adaptiveAbsorptionRateEnabled: false)
-                    case .nonlinear:
-                        self.settings = CarbModelSettings(absorptionModel: PiecewiseLinearAbsorption(), initialAbsorptionTimeOverrun: absorptionTimeOverrun, adaptiveAbsorptionRateEnabled: false)
-                    case .adaptiveRateNonlinear:
-                        self.settings = CarbModelSettings(absorptionModel: PiecewiseLinearAbsorption(), initialAbsorptionTimeOverrun: 1.0, adaptiveAbsorptionRateEnabled: true, adaptiveRateStandbyIntervalFraction: 0.2)
-                    }
+                    self.settings = self.carbAbsorptionModel.settings(with: absorptionTimeOverrun)
                 }
             }
             // TODO: Consider resetting uploadState.uploading
