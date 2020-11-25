@@ -4,7 +4,7 @@
 //
 //  Copyright © 2018 LoopKit Authors. All rights reserved.
 //
-
+import Foundation
 
 public enum PumpManagerError: Error {
     /// The manager isn't configured correctly

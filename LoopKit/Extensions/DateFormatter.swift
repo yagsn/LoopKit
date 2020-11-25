@@ -1,5 +1,5 @@
 //
-//  NSDateFormatter.swift
+//  DateFormatter.swift
 //  Naterade
 //
 //  Created by Nathan Racklyeft on 11/25/15.

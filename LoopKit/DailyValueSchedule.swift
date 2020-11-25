@@ -9,7 +9,6 @@
 import Foundation
 import HealthKit
 
-
 public struct RepeatingScheduleValue<T> {
     public var startTime: TimeInterval
     public var value: T

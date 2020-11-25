@@ -4,6 +4,7 @@
 //
 //  Copyright © 2017 LoopKit Authors. All rights reserved.
 //
+import Foundation
 
 public enum InsulinModelSettings: Equatable {
     case exponentialPreset(ExponentialInsulinModelPreset)
