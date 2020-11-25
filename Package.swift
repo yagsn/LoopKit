@@ -11,7 +11,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "LoopKit",
-            targets: ["LoopKit"]),
+            targets: ["LoopKit", "LoopKitUI"]),
     ],
     dependencies: [
         .package(url: "https://github.com/ps2/SwiftCharts.git", .branch("uikit-explicit"))
