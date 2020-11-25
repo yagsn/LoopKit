@@ -67,3 +67,5 @@ RemoteSettings.plist
 .DS_Store
 
 Carthage/
+
+/Packages
