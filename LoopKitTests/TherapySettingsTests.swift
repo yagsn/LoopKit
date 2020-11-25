@@ -9,6 +9,7 @@
 import XCTest
 import HealthKit
 import LoopKit
+@testable import LoopKit
 
 class TherapySettingsTests: XCTestCase {
     private let dateFormatter = ISO8601DateFormatter()

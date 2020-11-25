@@ -5,6 +5,7 @@
 //  Created by Nathaniel Hamming on 2020-01-17.
 //  Copyright © 2020 LoopKit Authors. All rights reserved.
 //
+import UIKit
 
 extension UIFont {
     public static var titleFontGroupedInset: UIFont {

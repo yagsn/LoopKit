@@ -7,6 +7,7 @@
 //
 
 import HealthKit
+import UIKit
 
 open class SettingsNavigationViewController: UINavigationController, CompletionNotifying {
 

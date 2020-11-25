@@ -1,5 +1,5 @@
 //
-//  NSTimeInterval.swift
+//  TimeInterval.swift
 //  Naterade
 //
 //  Created by Nathan Racklyeft on 1/9/16.
@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 
 extension TimeInterval {
     static func minutes(_ minutes: Double) -> TimeInterval {

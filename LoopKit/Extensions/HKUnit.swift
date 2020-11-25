@@ -10,19 +10,19 @@ import HealthKit
 
 
 extension HKUnit {
-    static let milligramsPerDeciliter: HKUnit = {
+    static public let milligramsPerDeciliter: HKUnit = {
         return HKUnit.gramUnit(with: .milli).unitDivided(by: .literUnit(with: .deci))
     }()
 
-    static let millimolesPerLiter: HKUnit = {
+    static public let millimolesPerLiter: HKUnit = {
         return HKUnit.moleUnit(with: .milli, molarMass: HKUnitMolarMassBloodGlucose).unitDivided(by: .liter())
     }()
 
-    static let internationalUnitsPerHour: HKUnit = {
+    static public let internationalUnitsPerHour: HKUnit = {
         return HKUnit.internationalUnit().unitDivided(by: .hour())
     }()
 
-    static let gramsPerUnit: HKUnit = {
+    static public let gramsPerUnit: HKUnit = {
         return HKUnit.gram().unitDivided(by: .internationalUnit())
     }()
     
@@ -40,14 +40,5 @@ extension HKUnit {
         }
 
         return nil
-    }
-    
-    /// The smallest value expected to be visible on a chart
-    var chartableIncrement: Double {
-        if self == .milligramsPerDeciliter {
-            return 1
-        } else {
-            return 1 / 25
-        }
-    }
+    }    
 }
