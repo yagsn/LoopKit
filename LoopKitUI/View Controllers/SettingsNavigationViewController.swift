@@ -6,7 +6,7 @@
 //  Copyright © 2019 LoopKit Authors. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 open class SettingsNavigationViewController: UINavigationController, CompletionNotifying {
 

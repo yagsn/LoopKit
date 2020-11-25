@@ -7,6 +7,7 @@
 //
 
 import LoopKit
+import UIKit
 
 open class ServiceViewController: UINavigationController, ServiceSetupNotifying, ServiceSettingsNotifying, CompletionNotifying {
 

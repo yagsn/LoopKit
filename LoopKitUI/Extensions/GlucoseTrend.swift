@@ -7,6 +7,7 @@
 //
 
 import LoopKit
+import UIKit
 
 extension GlucoseTrend {
     public var image: UIImage? {

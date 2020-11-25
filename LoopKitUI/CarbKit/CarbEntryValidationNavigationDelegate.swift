@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public class CarbEntryNavigationDelegate {
     private lazy var validationTitle = LocalizedString("Warning", comment: "Title of an alert containing a validation warning")

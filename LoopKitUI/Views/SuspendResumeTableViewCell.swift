@@ -7,6 +7,7 @@
 //
 
 import LoopKit
+import Foundation
 
 public class SuspendResumeTableViewCell: TextButtonTableViewCell {
     
