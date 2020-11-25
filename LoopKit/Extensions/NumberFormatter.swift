@@ -1,5 +1,5 @@
 //
-//  NSNumberFormatter.swift
+//  NumberFormatter.swift
 //  Loop
 //
 //  Created by Nate Racklyeft on 9/5/16.

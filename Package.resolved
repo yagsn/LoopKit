@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SwiftCharts",
+        "repositoryURL": "https://github.com/ps2/SwiftCharts.git",
+        "state": {
+          "branch": "uikit-explicit",
+          "revision": "2919cbcec95ca45fad31262426d6008a28ca7fb5",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
