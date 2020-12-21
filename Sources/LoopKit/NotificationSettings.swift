@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UserNotifications
 
 public struct NotificationSettings: Codable, Equatable {
     public enum AuthorizationStatus: String, Codable {
@@ -15,6 +16,21 @@ public struct NotificationSettings: Codable, Equatable {
         case authorized
         case provisional
         case unknown
+
+        public init(_ authorizationStatus: UNAuthorizationStatus) {
+            switch authorizationStatus {
+            case .notDetermined:
+                self = .notDetermined
+            case .denied:
+                self = .denied
+            case .authorized:
+                self = .authorized
+            case .provisional:
+                self = .provisional
+            @unknown default:
+                self = .unknown
+            }
+        }
     }
 
     public enum NotificationSetting: String, Codable {
@@ -22,6 +38,19 @@ public struct NotificationSettings: Codable, Equatable {
         case disabled
         case enabled
         case unknown
+
+        public init(_ notificationSetting: UNNotificationSetting) {
+            switch notificationSetting {
+            case .notSupported:
+                self = .notSupported
+            case .disabled:
+                self = .disabled
+            case .enabled:
+                self = .enabled
+            @unknown default:
+                self = .unknown
+            }
+        }
     }
 
     public enum AlertStyle: String, Codable {
@@ -29,6 +58,19 @@ public struct NotificationSettings: Codable, Equatable {
         case banner
         case alert
         case unknown
+
+        public init(_ alertStyle: UNAlertStyle) {
+            switch alertStyle {
+            case .none:
+                self = .none
+            case .banner:
+                self = .banner
+            case .alert:
+                self = .alert
+            @unknown default:
+                self = .unknown
+            }
+        }
     }
 
     public enum ShowPreviewsSetting: String, Codable {
@@ -36,6 +78,19 @@ public struct NotificationSettings: Codable, Equatable {
         case whenAuthenticated
         case never
         case unknown
+
+        public init(_ showPreviewsSetting: UNShowPreviewsSetting) {
+            switch showPreviewsSetting {
+            case .always:
+                self = .always
+            case .whenAuthenticated:
+                self = .whenAuthenticated
+            case .never:
+                self = .never
+            @unknown default:
+                self = .unknown
+            }
+        }
     }
 
     public let authorizationStatus: AuthorizationStatus
