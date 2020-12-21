@@ -10,7 +10,9 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(name: "LoopKit", targets: ["LoopKit"]),
-        .library(name: "LoopKitUI", targets: ["LoopKitUI"])
+        .library(name: "LoopKitUI", targets: ["LoopKitUI"]),
+        .library(name: "MockKit", targets: ["MockKit"]),
+        .library(name: "MockKitUI", targets: ["MockKitUI"])
     ],
     dependencies: [
         .package(url: "https://github.com/ps2/SwiftCharts.git", .branch("uikit-explicit"))
@@ -35,6 +37,18 @@ let package = Package(
             dependencies: ["LoopKit"],
             path: "LoopKitTests",
             exclude: ["Fixtures", "Info.plist"]
+        ),
+        .target(
+            name: "MockKit",
+            dependencies: [],
+            path: "MockKit",
+            exclude: ["Info.plist"]
+        ),
+        .target(
+            name: "MockKitUI",
+            dependencies: [],
+            path: "MockKitUI",
+            exclude: ["Info.plist"]
         ),
     ]
 )
