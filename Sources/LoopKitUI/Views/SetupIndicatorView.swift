@@ -135,7 +135,7 @@ public class SetupIndicatorView: UIView {
     }
 
     private func setUp() {
-        let image = UIImage(named: "Checkmark", in: Bundle(for: type(of: self)), compatibleWith: traitCollection)!
+        let image = UIImage(named: "Checkmark", in: Bundle.module, compatibleWith: traitCollection)!
         completionImageView = UIImageView(image: image)
         completionImageView.alpha = 0
         completionImageView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)

@@ -19,8 +19,7 @@ public class EmojiInputController: UIInputViewController, UICollectionViewDataSo
     var emojis: EmojiDataSource!
 
     static func instance(withEmojis emojis: EmojiDataSource) -> EmojiInputController {
-        let bundle = Bundle(for: self)
-        let storyboard = UIStoryboard(name: className, bundle: bundle)
+        let storyboard = UIStoryboard(name: className, bundle: Bundle.module)
         let controller = storyboard.instantiateInitialViewController() as! EmojiInputController
         controller.emojis = emojis
         return controller
