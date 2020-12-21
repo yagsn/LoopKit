@@ -40,13 +40,13 @@ let package = Package(
         ),
         .target(
             name: "MockKit",
-            dependencies: [],
+            dependencies: ["LoopTestingKit", "LoopKit"],
             path: "MockKit",
             exclude: ["Info.plist"]
         ),
         .target(
             name: "MockKitUI",
-            dependencies: [],
+            dependencies: ["LoopKitUI", "LoopKit"],
             path: "MockKitUI",
             exclude: ["Info.plist"]
         ),
