@@ -623,6 +623,7 @@ extension MockCGMManager {
         }
     }
     
+    // Note: UIKit code should not be in MockKit. 
 //    private func registerBackgroundTask() {
 //        backgroundTask = UIApplication.shared.beginBackgroundTask { [weak self] in
 //            self?.endBackgroundTask()
