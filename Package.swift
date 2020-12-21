@@ -12,7 +12,8 @@ let package = Package(
         .library(name: "LoopKit", targets: ["LoopKit"]),
         .library(name: "LoopKitUI", targets: ["LoopKitUI"]),
         .library(name: "MockKit", targets: ["MockKit"]),
-        .library(name: "MockKitUI", targets: ["MockKitUI"])
+        .library(name: "MockKitUI", targets: ["MockKitUI"]),
+        .library(name: "LoopTestingKit", targets: ["LoopTestingKit"])
     ],
     dependencies: [
         .package(url: "https://github.com/ps2/SwiftCharts.git", .branch("uikit-explicit"))
