@@ -50,5 +50,11 @@ let package = Package(
             path: "MockKitUI",
             exclude: ["Info.plist"]
         ),
+        .target(
+            name: "LoopTestingKit",
+            dependencies: [],
+            path: "LoopTestingKit",
+            exclude: ["Info.plist"]
+        ),
     ]
 )
