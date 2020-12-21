@@ -78,19 +78,6 @@ public final class PersistenceController {
     ///   - isReadOnly: Whether the persistent store is intended to be read-only. Read-only stores will observe cross-process notifications and reload all contexts when data changes. Writable stores will post these notifications.
     public init(
         directoryURL: URL,
-        isReadOnly: Bool = false
-    ) {
-        
-        guard let url = Bundle(for: PersistenceController.self).url(forResource: "Model", withExtension: "momd") else {
-            log.error("Could not find Model url")
-            fatalError("Unable to find Model url")
-        }
-        
-        guard let model = NSManagedObjectModel(contentsOf: url) else {
-            log.error("Could not open Model url at %@", String(describing: url))
-            fatalError("Unable to find Model url")
-        }
-        
         managedObjectContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         managedObjectContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
         managedObjectContext.automaticallyMergesChangesFromParent = true
@@ -98,7 +85,7 @@ public final class PersistenceController {
         self.directoryURL = directoryURL
         self.isReadOnly = isReadOnly
         
-        initializeStack(inDirectory: directoryURL, model: model)
+        initializeStack(inDirectory: directoryURL, model: model ?? NSManagedObjectModel(contentsOf: Bundle.module.url(forResource: "Model", withExtension: "momd")!)!)
     }
 
     private var readyCallbacks: [ReadyCallback] = []
