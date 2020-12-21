@@ -6,8 +6,8 @@
 //  Copyright © 2019 LoopKit Authors. All rights reserved.
 //
 
+import Foundation
 import LoopKit
-
 
 struct DateRelativeBasalEntry: DateRelativeQuantity, Codable {
     var unitsPerHourValue: Double
