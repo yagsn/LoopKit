@@ -473,7 +473,7 @@ public final class MockCGMManager: TestingCGMManager {
 extension MockCGMManager {
     
     public func getSoundBaseURL() -> URL? {
-        return Bundle(for: type(of: self)).bundleURL
+        return Bundle.module.bundleURL
     }
     
     public func getSounds() -> [Alert.Sound] {

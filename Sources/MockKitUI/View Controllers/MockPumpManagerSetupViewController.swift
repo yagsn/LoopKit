@@ -15,7 +15,7 @@ import MockKit
 final class MockPumpManagerSetupViewController: UINavigationController, PumpManagerSetupViewController, CompletionNotifying {
 
     static func instantiateFromStoryboard() -> MockPumpManagerSetupViewController {
-        return UIStoryboard(name: "MockPumpManager", bundle: Bundle(for: MockPumpManagerSetupViewController.self)).instantiateInitialViewController() as! MockPumpManagerSetupViewController
+        return UIStoryboard(name: "MockPumpManager", bundle: Bundle.module).instantiateInitialViewController() as! MockPumpManagerSetupViewController
     }
 
     var maxBasalRateUnitsPerHour: Double?

@@ -339,17 +339,16 @@ public class GlucoseRangeScheduleTableViewController: UITableViewController {
                 cell.maxValue = range.maxValue
             }
 
-            let bundle = Bundle(for: type(of: self))
             let titleText: String
             let image: UIImage?
 
             switch context {
             case .legacyWorkout:
                 titleText = LocalizedString("Workout", comment: "Title for the workout override range")
-                image = UIImage(named: "workout", in: bundle, compatibleWith: traitCollection)
+                image = UIImage(named: "workout", in: Bundle.module, compatibleWith: traitCollection)
             case .preMeal:
                 titleText = LocalizedString("Pre-Meal", comment: "Title for the pre-meal override range")
-                image = UIImage(named: "Pre-Meal", in: bundle, compatibleWith: traitCollection)
+                image = UIImage(named: "Pre-Meal", in: Bundle.module, compatibleWith: traitCollection)
             default:
                 preconditionFailure("Unexpected override context \(context)")
             }
