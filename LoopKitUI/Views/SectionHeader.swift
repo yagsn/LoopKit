@@ -23,7 +23,7 @@ public struct SectionHeader: View {
     }
     
     public var body: some View {
-        if #available(iOSApplicationExtension 14.0, *) {
+        if #available(iOS 14.0, *) {
             // iOS 14 puts section headers in all-caps by default.  This un-does that.
             content.textCase(nil)
         } else {
