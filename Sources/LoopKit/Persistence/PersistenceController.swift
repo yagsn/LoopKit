@@ -78,6 +78,10 @@ public final class PersistenceController {
     ///   - isReadOnly: Whether the persistent store is intended to be read-only. Read-only stores will observe cross-process notifications and reload all contexts when data changes. Writable stores will post these notifications.
     public init(
         directoryURL: URL,
+        model: NSManagedObjectModel? = nil,
+        isReadOnly: Bool = false
+    ) {
+        
         managedObjectContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         managedObjectContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
         managedObjectContext.automaticallyMergesChangesFromParent = true
