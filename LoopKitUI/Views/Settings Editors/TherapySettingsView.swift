@@ -11,7 +11,7 @@ import HealthKit
 import LoopKit
 import SwiftUI
 
-public struct TherapySettingsView: View, HorizontalSizeClassOverride {
+public struct TherapySettingsView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.appName) private var appName
 
@@ -65,12 +65,11 @@ public struct TherapySettingsView: View, HorizontalSizeClassOverride {
             }
             lastItem
         }
-        .listStyle(GroupedListStyle())
+        .insetGroupedListStyle()
         .onAppear() {
             UITableView.appearance().separatorStyle = .singleLine // Add lines between rows
         }
         .navigationBarTitle(Text(LocalizedString("Therapy Settings", comment: "Therapy Settings screen title")), displayMode: .large)
-        .environment(\.horizontalSizeClass, horizontalOverride)
     }
     
     private var navigationViewWrappedContent: some View {
@@ -250,6 +249,7 @@ extension TherapySettingsView {
                 )
             }
         }
+        .accessibilityElement(children: .combine)
     }
     
     private var maxBolusItem: some View {
@@ -267,6 +267,7 @@ extension TherapySettingsView {
                 )
             }
         }
+        .accessibilityElement(children: .combine)
     }
         
     private var insulinModelSection: some View {
@@ -282,6 +283,7 @@ extension TherapySettingsView {
                         .foregroundColor(.secondary)
                         .padding(.bottom, 8)
                 }
+                .accessibilityElement(children: .combine)
             }
         }
     }
