@@ -23,37 +23,34 @@ let package = Package(
         .target(
             name: "LoopKit",
             dependencies: [],
-            path: "LoopKit",
             exclude: ["Info.plist"]
         ),
         .target(
             name: "LoopKitUI",
             dependencies: ["LoopKit", "SwiftCharts"],
-            path: "LoopKitUI",
             exclude: ["Info.plist"]
         ),
         .testTarget(
             name: "LoopKitTests",
             dependencies: ["LoopKit"],
-            path: "LoopKitTests",
             exclude: ["Fixtures", "Info.plist"]
         ),
         .target(
             name: "MockKit",
             dependencies: ["LoopTestingKit", "LoopKit"],
-            path: "MockKit",
-            exclude: ["Info.plist"]
+            exclude: ["Info.plist"],
+            resources: [
+                .process("Assets")
+            ]
         ),
         .target(
             name: "MockKitUI",
-            dependencies: ["LoopKitUI", "LoopKit"],
-            path: "MockKitUI",
+            dependencies: ["LoopKitUI", "LoopKit", "MockKit"],
             exclude: ["Info.plist"]
         ),
         .target(
             name: "LoopTestingKit",
-            dependencies: [],
-            path: "LoopTestingKit",
+            dependencies: ["LoopKit"],
             exclude: ["Info.plist"]
         ),
     ]
