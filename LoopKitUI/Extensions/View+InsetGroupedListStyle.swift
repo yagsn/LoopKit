@@ -20,7 +20,7 @@ extension View {
 fileprivate struct CustomInsetGroupedListStyle: ViewModifier, HorizontalSizeClassOverride {
 
     @ViewBuilder func body(content: Content) -> some View {
-        if #available(iOSApplicationExtension 14.0, *) {
+        if #available(iOS 14.0, *) {
             content
                 .listStyle(InsetGroupedListStyle())
         } else {
