@@ -28,6 +28,8 @@ public struct NotificationSettings: Codable, Equatable {
                 self = .authorized
             case .provisional:
                 self = .provisional
+            case .ephemeral:
+                self = .ephemeral
             @unknown default:
                 self = .unknown
             }
