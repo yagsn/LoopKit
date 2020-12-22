@@ -20,7 +20,7 @@ class DeviceLogEntryEncodableTests: XCTestCase {
         let persistentStoreDescription = NSPersistentStoreDescription()
         persistentStoreDescription.type = NSInMemoryStoreType
 
-        persistentContainer = PersistentContainer(name: "DeviceLog")
+        persistentContainer = PersistentContainer(name: "DeviceLog", managedObjectModel: NSManagedObjectModel(contentsOf: Bundle.module.url(forResource: "DeviceLog", withExtension: "momd")!)!)
         persistentContainer.persistentStoreDescriptions = [persistentStoreDescription]
         persistentContainer.loadPersistentStores { (_, _) in }
 

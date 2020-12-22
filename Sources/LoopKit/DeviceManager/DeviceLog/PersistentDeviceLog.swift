@@ -39,7 +39,7 @@ public class PersistentDeviceLog {
         managedObjectContext.automaticallyMergesChangesFromParent = true
 
         let storeDescription = NSPersistentStoreDescription(url: storageFile)
-        persistentContainer = PersistentContainer(name: "DeviceLog")
+        persistentContainer = PersistentContainer(name: "DeviceLog", managedObjectModel: NSManagedObjectModel(contentsOf: Bundle.module.url(forResource: "DeviceLog", withExtension: "momd")!)!)
         persistentContainer.persistentStoreDescriptions = [storeDescription]
         persistentContainer.loadPersistentStores { description, error in
             if let error = error {
