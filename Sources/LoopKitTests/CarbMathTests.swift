@@ -30,7 +30,7 @@ class CarbMathTests: XCTestCase {
     }
 
     private func loadSchedules() -> (CarbRatioSchedule, InsulinSensitivitySchedule) {
-        let fixture: JSONDictionary = loadFixture("read_carb_ratios")
+        let fixture: JSONDictionary = loadFixture("read_carb_ratios", directory: "Fixtures")
         let schedule = fixture["schedule"] as! [JSONDictionary]
 
         let items = schedule.map {
@@ -44,12 +44,12 @@ class CarbMathTests: XCTestCase {
     }
 
     private func loadHistoryFixture(_ name: String) -> [NewCarbEntry] {
-        let fixture: [JSONDictionary] = loadFixture(name)
+        let fixture: [JSONDictionary] = loadFixture(name, directory: "Fixtures/CarbKit")
         return carbEntriesFromFixture(fixture)
     }
     
     private func loadCarbEntryFixture() -> [NewCarbEntry] {
-        let fixture: [JSONDictionary] = loadFixture("carb_entry_input")
+        let fixture: [JSONDictionary] = loadFixture("carb_entry_input", directory: "Fixtures/CarbKit")
         return carbEntriesFromFixture(fixture)
     }
 
@@ -75,7 +75,7 @@ class CarbMathTests: XCTestCase {
     }
 
     private func loadEffectOutputFixture(_ name: String) -> [GlucoseEffect] {
-        let fixture: [JSONDictionary] = loadFixture(name)
+        let fixture: [JSONDictionary] = loadFixture(name, directory: "Fixtures/CarbKit")
         let dateFormatter = ISO8601DateFormatter.localTimeDate()
 
         return fixture.map {
@@ -84,7 +84,7 @@ class CarbMathTests: XCTestCase {
     }
 
     private func loadCOBOutputFixture(_ name: String) -> [CarbValue] {
-        let fixture: [JSONDictionary] = loadFixture(name)
+        let fixture: [JSONDictionary] = loadFixture(name, directory: "Fixtures/CarbKit")
         let dateFormatter = ISO8601DateFormatter.localTimeDate()
 
         return fixture.map {
@@ -93,7 +93,7 @@ class CarbMathTests: XCTestCase {
     }
 
     private func loadICEInputFixture(_ name: String) -> [GlucoseEffectVelocity] {
-        let fixture: [JSONDictionary] = loadFixture(name)
+        let fixture: [JSONDictionary] = loadFixture(name, directory: "Fixtures/CarbKit")
         let dateFormatter = ISO8601DateFormatter.localTimeDate()
         
         let unit = HKUnit.milligramsPerDeciliter.unitDivided(by: .minute())
@@ -599,7 +599,7 @@ class CarbMathTests: XCTestCase {
 
     func testGroupedByOverlappingAbsorptionTimeFromHistory() {
         let input = loadHistoryFixture("grouped_by_overlapping_absorption_times_input")
-        let outputFixture: [[JSONDictionary]] = loadFixture("grouped_by_overlapping_absorption_times_output")
+        let outputFixture: [[JSONDictionary]] = loadFixture("grouped_by_overlapping_absorption_times_output", directory: "Fixtures/CarbKit")
         let output = outputFixture.map { self.carbEntriesFromFixture($0) }
         let grouped = input.groupedByOverlappingAbsorptionTimes(defaultAbsorptionTime: TimeInterval(minutes: 180))
 
@@ -612,7 +612,7 @@ class CarbMathTests: XCTestCase {
 
     func testGroupedByOverlappingAbsorptionTimeEdgeCases() {
         let input = loadHistoryFixture("grouped_by_overlapping_absorption_times_border_case_input")
-        let outputFixture: [[JSONDictionary]] = loadFixture("grouped_by_overlapping_absorption_times_border_case_output")
+        let outputFixture: [[JSONDictionary]] = loadFixture("grouped_by_overlapping_absorption_times_border_case_output", directory: "Fixtures/CarbKit")
         let output = outputFixture.map { self.carbEntriesFromFixture($0) }
         let grouped = input.groupedByOverlappingAbsorptionTimes(defaultAbsorptionTime: TimeInterval(minutes: 180))
 
