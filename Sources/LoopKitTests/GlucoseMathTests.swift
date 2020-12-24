@@ -64,7 +64,7 @@ class GlucoseMathTests: XCTestCase {
     }
 
     func loadInputFixture(_ resourceName: String) -> [GlucoseFixtureValue] {
-        let fixture: [JSONDictionary] = loadFixture(resourceName)
+        let fixture: [JSONDictionary] = loadFixture(resourceName, directory: "Fixtures/GlucoseKit")
         let dateFormatter = ISO8601DateFormatter.localTimeDate()
 
         return fixture.map {
@@ -79,7 +79,7 @@ class GlucoseMathTests: XCTestCase {
     }
 
     func loadOutputFixture(_ resourceName: String) -> [GlucoseEffect] {
-        let fixture: [JSONDictionary] = loadFixture(resourceName)
+        let fixture: [JSONDictionary] = loadFixture(resourceName, directory: "Fixtures/GlucoseKit")
         let dateFormatter = ISO8601DateFormatter.localTimeDate()
 
         return fixture.map {
@@ -88,7 +88,7 @@ class GlucoseMathTests: XCTestCase {
     }
 
     func loadEffectVelocityFixture(_ resourceName: String) -> [GlucoseEffectVelocity] {
-        let fixture: [JSONDictionary] = loadFixture(resourceName)
+        let fixture: [JSONDictionary] = loadFixture(resourceName, directory: "Fixtures/GlucoseKit")
         let dateFormatter = ISO8601DateFormatter.localTimeDate()
 
         return fixture.map {

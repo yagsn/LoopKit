@@ -95,7 +95,7 @@ class InsulinMathTests: XCTestCase {
 
     func loadReservoirFixture(_ resourceName: String) -> [NewReservoirValue] {
 
-        let fixture: [JSONDictionary] = loadFixture(resourceName)
+        let fixture: [JSONDictionary] = loadFixture(resourceName, directory: "Fixtures/InsulinKit")
         let dateFormatter = ISO8601DateFormatter.localTimeDate(timeZone: fixtureTimeZone)
 
         return fixture.map {
@@ -104,7 +104,7 @@ class InsulinMathTests: XCTestCase {
     }
 
     func loadDoseFixture(_ resourceName: String, insulinType: InsulinType? = .novolog) -> [DoseEntry] {
-        let fixture: [JSONDictionary] = loadFixture(resourceName)
+        let fixture: [JSONDictionary] = loadFixture(resourceName, directory: "Fixtures/InsulinKit")
         let dateFormatter = ISO8601DateFormatter.localTimeDate(timeZone: fixtureTimeZone)
 
         return fixture.compactMap {
@@ -136,7 +136,7 @@ class InsulinMathTests: XCTestCase {
     }
 
     func loadInsulinValueFixture(_ resourceName: String) -> [InsulinValue] {
-        let fixture: [JSONDictionary] = loadFixture(resourceName)
+        let fixture: [JSONDictionary] = loadFixture(resourceName, directory: "Fixtures/InsulinKit")
         let dateFormatter = ISO8601DateFormatter.localTimeDate(timeZone: fixtureTimeZone)
 
         return fixture.map {
@@ -145,7 +145,7 @@ class InsulinMathTests: XCTestCase {
     }
 
     func loadGlucoseEffectFixture(_ resourceName: String) -> [GlucoseEffect] {
-        let fixture: [JSONDictionary] = loadFixture(resourceName)
+        let fixture: [JSONDictionary] = loadFixture(resourceName, directory: "Fixtures/InsulinKit")
         let dateFormatter = ISO8601DateFormatter.localTimeDate(timeZone: fixtureTimeZone)
 
         return fixture.map {
@@ -154,7 +154,7 @@ class InsulinMathTests: XCTestCase {
     }
 
     func loadBasalRateScheduleFixture(_ resourceName: String) -> BasalRateSchedule {
-        let fixture: [JSONDictionary] = loadFixture(resourceName)
+        let fixture: [JSONDictionary] = loadFixture(resourceName, directory: "Fixtures")
 
         let items = fixture.map {
             return RepeatingScheduleValue(startTime: TimeInterval(minutes: $0["minutes"] as! Double), value: $0["rate"] as! Double)

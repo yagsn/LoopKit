@@ -910,7 +910,7 @@ class DoseStoreEffectTests: PersistenceControllerTestCase {
     }
 
     func loadGlucoseEffectFixture(_ resourceName: String) -> [GlucoseEffect] {
-        let fixture: [JSONDictionary] = loadFixture(resourceName)
+        let fixture: [JSONDictionary] = loadFixture(resourceName, directory: "Fixtures/InsulinKit")
         let dateFormatter = ISO8601DateFormatter.localTimeDate()
 
         return fixture.map {
@@ -919,7 +919,7 @@ class DoseStoreEffectTests: PersistenceControllerTestCase {
     }
 
     func loadDoseFixture(_ resourceName: String) -> [DoseEntry] {
-        let fixture: [JSONDictionary] = loadFixture(resourceName)
+        let fixture: [JSONDictionary] = loadFixture(resourceName, directory: "Fixtures/InsulinKit")
         let dateFormatter = ISO8601DateFormatter.localTimeDate()
 
         return fixture.compactMap {

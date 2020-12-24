@@ -41,7 +41,7 @@ class BasalRateScheduleTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        let path = Bundle.module.path(forResource: "basal", ofType: "json")!
+        let path = Bundle.module.path(forResource: "basal", ofType: "json", inDirectory: "Fixtures")!
         let fixture = try! JSONSerialization.jsonObject(with: Data(contentsOf: URL(fileURLWithPath: path)), options: []) as! [JSONDictionary]
 
         items = fixture.map {

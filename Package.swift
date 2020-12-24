@@ -31,11 +31,6 @@ let package = Package(
             dependencies: ["LoopKit", "SwiftCharts"],
             exclude: ["Info.plist"]
         ),
-        .testTarget(
-            name: "LoopKitTests",
-            dependencies: ["LoopKit"],
-            exclude: ["Fixtures", "Info.plist"]
-        ),
         .target(
             name: "MockKit",
             dependencies: ["LoopTestingKit", "LoopKit"],
@@ -53,6 +48,14 @@ let package = Package(
             name: "LoopTestingKit",
             dependencies: ["LoopKit"],
             exclude: ["Info.plist"]
+        ),
+        .testTarget(
+            name: "LoopKitTests",
+            dependencies: ["LoopKit"],
+            exclude: ["Info.plist"],
+            resources: [
+                .copy("Fixtures"),
+            ]
         ),
     ]
 )

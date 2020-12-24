@@ -28,6 +28,8 @@ public class PersistentDeviceLog {
         return Date(timeIntervalSinceNow: -maxEntryAge)
     }
     
+    public static let modelURL: URL = Bundle.module.url(forResource: "DeviceLog", withExtension: "momd")!
+    
     private let log = OSLog(category: "PersistentDeviceLog")
     
     public init(storageFile: URL, maxEntryAge: TimeInterval = TimeInterval(7 * 24 * 60 * 60)) {
@@ -39,7 +41,7 @@ public class PersistentDeviceLog {
         managedObjectContext.automaticallyMergesChangesFromParent = true
 
         let storeDescription = NSPersistentStoreDescription(url: storageFile)
-        persistentContainer = PersistentContainer(name: "DeviceLog", managedObjectModel: NSManagedObjectModel(contentsOf: Bundle.module.url(forResource: "DeviceLog", withExtension: "momd")!)!)
+        persistentContainer = PersistentContainer(name: "DeviceLog", managedObjectModel: NSManagedObjectModel(contentsOf: PersistentDeviceLog.modelURL)!)
         persistentContainer.persistentStoreDescriptions = [storeDescription]
         persistentContainer.loadPersistentStores { description, error in
             if let error = error {

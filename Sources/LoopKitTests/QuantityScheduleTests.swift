@@ -17,7 +17,7 @@ class QuantityScheduleTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        let path = Bundle.module.path(forResource: "read_carb_ratios", ofType: "json")!
+        let path = Bundle.module.path(forResource: "read_carb_ratios", ofType: "json", inDirectory: "Fixtures")!
         let fixture = try! JSONSerialization.jsonObject(with: Data(contentsOf: URL(fileURLWithPath: path)), options: []) as! JSONDictionary
         let schedule = fixture["schedule"] as! [JSONDictionary]
 
