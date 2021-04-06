@@ -6,21 +6,6 @@
 	objectVersion = 52;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		1D81903A25687FF2004D1BEC /* Cartfile */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 1D81903D25687FF2004D1BEC /* Build configuration list for PBXAggregateTarget "Cartfile" */;
-			buildPhases = (
-				1D81905025688014004D1BEC /* Homebrew & Carthage Setup */,
-				1D8190512568805E004D1BEC /* Carthage Bootstrap */,
-			);
-			dependencies = (
-			);
-			name = Cartfile;
-			productName = Cartfile;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		1D096BFA24C242300078B6B5 /* CheckmarkListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D096BF924C242300078B6B5 /* CheckmarkListItem.swift */; };
 		1D096C0224C24C220078B6B5 /* InsulinModelSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D096BFF24C24C220078B6B5 /* InsulinModelSettings.swift */; };
@@ -758,7 +743,6 @@
 		C140E0522602908A000A4FF7 /* SettingsPresentationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C140E0512602908A000A4FF7 /* SettingsPresentationMode.swift */; };
 		C164A56022F14C73000E3FA5 /* UnfinalizedDose.swift in Sources */ = {isa = PBXBuildFile; fileRef = C164A55F22F14C73000E3FA5 /* UnfinalizedDose.swift */; };
 		C164A56422F21081000E3FA5 /* MockPumpManagerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C164A56322F21081000E3FA5 /* MockPumpManagerState.swift */; };
-		C16882E8261C24260061EA78 /* SwiftCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16882E7261C24260061EA78 /* SwiftCharts.framework */; platformFilter = ios; };
 		C16DA83F22E8D88F008624C2 /* LoopPluginBundleKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16DA83E22E8D88F008624C2 /* LoopPluginBundleKey.swift */; };
 		C16DA84522E9330A008624C2 /* LoopUIPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16DA84422E9330A008624C2 /* LoopUIPlugin.swift */; };
 		C17B02092564502A004188F1 /* Modelv1v3.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = C17B020825645029004188F1 /* Modelv1v3.xcmappingmodel */; };
@@ -781,6 +765,7 @@
 		C1CB894E25C8E7CA00782BAC /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9C6911625180A4E009F9999 /* Model.xcdatamodeld */; };
 		C1CB895925C8E7D900782BAC /* Modelv1v4.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = C1E84B8425C62FB100623C08 /* Modelv1v4.xcmappingmodel */; };
 		C1CB895A25C8E7DC00782BAC /* Modelv1v3.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = C17B020825645029004188F1 /* Modelv1v3.xcmappingmodel */; };
+		C1DA3D4B261D2687002631FF /* SwiftCharts.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1DA3D4A261D2687002631FF /* SwiftCharts.xcframework */; };
 		C1DD512B259FD8A600DE27AE /* InsulinTypeChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1742345259CD3ED00399C9D /* InsulinTypeChooser.swift */; };
 		C1DD517825A016E700DE27AE /* InsulinTypeSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DD515A259FE3AB00DE27AE /* InsulinTypeSetting.swift */; };
 		C1DE4C2125A253BD007065F8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DE4C2025A253BD007065F8 /* Color.swift */; };
@@ -1588,7 +1573,6 @@
 		C140E0512602908A000A4FF7 /* SettingsPresentationMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresentationMode.swift; sourceTree = "<group>"; };
 		C164A55F22F14C73000E3FA5 /* UnfinalizedDose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnfinalizedDose.swift; sourceTree = "<group>"; };
 		C164A56322F21081000E3FA5 /* MockPumpManagerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPumpManagerState.swift; sourceTree = "<group>"; };
-		C16882E7261C24260061EA78 /* SwiftCharts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftCharts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C16DA83E22E8D88F008624C2 /* LoopPluginBundleKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopPluginBundleKey.swift; sourceTree = "<group>"; };
 		C16DA84422E9330A008624C2 /* LoopUIPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopUIPlugin.swift; sourceTree = "<group>"; };
 		C1742345259CD3ED00399C9D /* InsulinTypeChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsulinTypeChooser.swift; sourceTree = "<group>"; };
@@ -1604,6 +1588,7 @@
 		C191D26225B3815000C26C0B /* AutomaticDoseRecommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomaticDoseRecommendation.swift; sourceTree = "<group>"; };
 		C1ABE38D2245CFCD00570E82 /* UnfairLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnfairLock.swift; sourceTree = "<group>"; };
 		C1CBF61B1EEA2A1E001E4851 /* ice_1_hour_input.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ice_1_hour_input.json; sourceTree = "<group>"; };
+		C1DA3D4A261D2687002631FF /* SwiftCharts.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SwiftCharts.xcframework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1DB55B01F2E95FD00C483A2 /* WalshInsulinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalshInsulinModel.swift; sourceTree = "<group>"; };
 		C1DB55B21F2E964400C483A2 /* ExponentialInsulinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExponentialInsulinModel.swift; sourceTree = "<group>"; };
 		C1DB55B41F2EA6EA00C483A2 /* iob_from_doses_exponential_output.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = iob_from_doses_exponential_output.json; sourceTree = "<group>"; };
@@ -1720,9 +1705,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C16882E8261C24260061EA78 /* SwiftCharts.framework in Frameworks */,
 				4353D173203D3E7E007B4ECD /* CoreData.framework in Frameworks */,
 				4353D170203D3E5C007B4ECD /* HealthKit.framework in Frameworks */,
+				C1DA3D4B261D2687002631FF /* SwiftCharts.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2177,7 +2162,7 @@
 		43BA718D202020140058961E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C16882E7261C24260061EA78 /* SwiftCharts.framework */,
+				C1DA3D4A261D2687002631FF /* SwiftCharts.xcframework */,
 				A9E675F4227140DD00E25293 /* HealthKit.framework */,
 				4353D172203D3E7E007B4ECD /* CoreData.framework */,
 				A9E675F2227140D800E25293 /* CoreData.framework */,
@@ -3086,10 +3071,6 @@
 				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "LoopKit Authors";
 				TargetAttributes = {
-					1D81903A25687FF2004D1BEC = {
-						CreatedOnToolsVersion = 12.2;
-						ProvisioningStyle = Automatic;
-					};
 					1DEE226824A676A300693C32 = {
 						TestTargetID = 430157F61C7EC03B00B64B63;
 					};
@@ -3173,7 +3154,6 @@
 				B4CEE2DF257129780093111B /* MockKitTests */,
 				89D2048E21CC7C12001238CC /* MockKitUI */,
 				892A5D33222F03CB008961AB /* LoopTestingKit */,
-				1D81903A25687FF2004D1BEC /* Cartfile */,
 			);
 		};
 /* End PBXProject section */
@@ -3391,45 +3371,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		1D81905025688014004D1BEC /* Homebrew & Carthage Setup */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Homebrew & Carthage Setup";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if ! [ -x \"$(command -v brew)\" ]; then\n    # Install Homebrew\n    ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\"\nfi\n\nif brew ls carthage > /dev/null; then\n    brew upgrade carthage || echo \"Continuing…\"\nelse\n    brew install carthage\nfi\n";
-		};
-		1D8190512568805E004D1BEC /* Carthage Bootstrap */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Carthage Bootstrap";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "echo \"Bootstrapping Carthage dependencies...\"\nunset LLVM_TARGET_TRIPLE_SUFFIX\n\nif ! cmp -s Cartfile.Resolved Carthage/Cartfile.resolved; then\n    time ./bin/carthage bootstrap --project-directory \"$SRCROOT\" --use-xcframeworks --cache-builds --verbose || exit 1\n    cp Cartfile.resolved Carthage\nelse\n    echo \"Carthage: not bootstrapping\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1DEE226B24A676A300693C32 /* Sources */ = {
@@ -4362,22 +4303,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		1D81903B25687FF2004D1BEC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		1D81903C25687FF2004D1BEC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		1DEE22FF24A676A300693C32 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -4419,10 +4344,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = UY678SP37Q;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "LoopKit Example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4444,10 +4366,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = UY678SP37Q;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "LoopKit Example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4477,10 +4396,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 41;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = LoopKitUI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -4514,10 +4430,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 41;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = LoopKitUI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -4567,6 +4480,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -4633,6 +4547,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -4986,15 +4901,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D81903D25687FF2004D1BEC /* Build configuration list for PBXAggregateTarget "Cartfile" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1D81903B25687FF2004D1BEC /* Debug */,
-				1D81903C25687FF2004D1BEC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		1DEE22FE24A676A300693C32 /* Build configuration list for PBXNativeTarget "LoopKitHostedTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
