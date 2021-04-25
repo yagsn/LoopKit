@@ -99,8 +99,6 @@ public struct DailyValueSchedule<T>: DailySchedule {
         self.repeatInterval = TimeInterval(hours: 24)
         self.items = dailyItems.sorted { $0.startTime < $1.startTime }
         self.timeZone = timeZone ?? TimeZone.currentFixed
-        
-        repeatInterval = TimeInterval(hours: 24)
 
         guard let firstItem = self.items.first else {
             return nil

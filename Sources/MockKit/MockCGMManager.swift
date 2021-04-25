@@ -9,6 +9,7 @@
 import HealthKit
 import LoopKit
 import LoopTestingKit
+import UIKit
 
 public struct MockCGMState: GlucoseDisplayable {
     public var isStateValid: Bool
