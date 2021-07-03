@@ -71,7 +71,7 @@ final class MockHUDProvider: NSObject, HUDProvider {
         return reservoirVolumeHUDView
     }
 
-    func didTapOnHUDView(_ view: BaseHUDView) -> HUDTapAction? {
+    func didTapOnHUDView(_ view: BaseHUDView, allowDebugFeatures: Bool) -> HUDTapAction? {
         return nil
     }
 

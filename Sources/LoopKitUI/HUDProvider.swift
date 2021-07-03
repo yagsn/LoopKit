@@ -17,7 +17,7 @@ public enum HUDTapAction {
     case takeNoAction
 }
 
-public protocol HUDProvider: class  {
+public protocol HUDProvider: AnyObject  {
     var managerIdentifier: String { get }
 
     typealias HUDViewRawState = [String: Any]
@@ -26,7 +26,7 @@ public protocol HUDProvider: class  {
     func createHUDView() -> LevelHUDView?
 
     // Returns the action that should be taken when the view is tapped
-    func didTapOnHUDView(_ view: BaseHUDView) -> HUDTapAction?
+    func didTapOnHUDView(_ view: BaseHUDView, allowDebugFeatures: Bool) -> HUDTapAction?
 
     // The current, serializable state of the HUD views
     var hudViewRawState: HUDViewRawState { get }
