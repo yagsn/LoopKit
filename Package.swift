@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "LoopKit",
     defaultLocalization: "en",
-    platforms: [.iOS(.v13), .watchOS(.v4)],
+    platforms: [.iOS(.v14), .watchOS(.v4)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(name: "LoopKit", targets: ["LoopKit"]),
@@ -33,7 +33,7 @@ let package = Package(
         ),
         .target(
             name: "MockKit",
-            dependencies: ["LoopTestingKit", "LoopKit"],
+            dependencies: ["LoopTestingKit", "LoopKit", "LoopKitUI"],
             exclude: ["Info.plist"],
             resources: [
                 .process("Assets")
